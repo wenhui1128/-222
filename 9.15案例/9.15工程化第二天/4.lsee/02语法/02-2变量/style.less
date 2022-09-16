@@ -1,0 +1,28 @@
+//定义变量(可以复用 为全局变量)
+@size:100px;
+@bg:pink;
+@color:green;
+
+//使用变量
+.box1 {
+    //局部变量 在某个选择其中定义的变量
+    @space:20px;
+
+
+    width: @size;
+    height: @size;
+    background-color: @bg;
+    color: @color; 
+
+    //支持运算 局部变量
+    padding: @space * 2;
+}
+
+.box2 {
+    width:@size;
+    height: @size;
+    background-color: @bg;
+    color: @color;
+
+    //使用局部变量是不可以的 加上命名空间也是不可以的 用不到box1里的变量
+}

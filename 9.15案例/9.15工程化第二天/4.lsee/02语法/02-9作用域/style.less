@@ -1,0 +1,44 @@
+// 我们讨论变量，混合，方法在全局环境，以及局部环境下的使用情况
+// 全局数据
+@w: 100px;
+
+.test {
+    height: @w;
+}
+
+.wcenter(@w, @mt, @mb) {
+    width: @w;
+    margin: @mt auto @mb;
+}
+
+
+.box {
+    // 局部数据
+    @c: pink;
+
+    #demo {
+        background-color: green;
+    }
+
+    .hlh(@h) {
+        height: @h;
+        line-height: @h;
+    }
+    
+    // 全局的数据 在任何地方都可以使用
+    width: @w;
+    .test;
+    .wcenter(200px, 0, 0);
+}
+
+
+.box2 {
+    // 测试局部变量 (不支持)
+    // color: .box @c;
+
+    // 加上命名空间是支持的
+    .box #demo;
+
+    // 加上命名空间是支持的
+    .box .hlh(100px);
+}

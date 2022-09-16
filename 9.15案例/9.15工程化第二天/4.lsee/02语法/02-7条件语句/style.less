@@ -1,0 +1,114 @@
+/* //定义设置盒子宽高的方法
+.size(@w:100px,@h:100px){
+    width: @w;
+    height:@h;
+}
+
+//设置非条件语句  大不于两百
+.size(@w:100px, @h:100px) when not(@w > 200px) {
+    background-color: red;
+}
+
+//且语句
+.size(@w:100px, @h:100px) when(@w > 200px) and (@h < 200px) {
+    background-color: green;
+}
+
+.size(@w:100px, @h:100px) when(@w >= 300px) and (@h = 200px) {
+    background-color: orange;
+}
+
+//使用
+.box1 {
+    .size(190px);
+}
+.box2 {
+    .size(210px,190px)
+}
+.box3{
+    .size(310px,200px)
+} */
+
+/* //制作一个三角形
+div{
+    width: 0;
+    border: 20px solid transparent;
+    //特殊边着色
+    border-top-color: pink;
+}
+
+//行内元素 (天生的行高会撑起来 所以设置font-size为0)
+span{
+    font-size: 0;
+    border: 20px solid transparent;
+    //特殊边着色
+    border-left-color: pink;
+} */
+
+//定义方法 制作三角形
+/* .arrow(@w,@t,@c){
+    width: 0;
+    font-size:0;
+    border: @w solid transparent;
+    //插值语法@{key}
+    border-@{t}-color:@c;
+}
+
+//使用方法制作三角形
+div{
+    .arrow(40px, right, orange);
+}
+span{
+    .arrow(20px,bottom,pink);
+}
+ */
+//制作箭头
+.arrow2(@w,@c,@dir){
+    &::after{
+        content: '';
+        display: inline-block; //行内
+        width: @w;
+        height: @w;
+        border-top: 2px solid @c;
+        border-left: 2px solid @c;
+    }
+}
+
+ //定义条件语句
+ .arrow2(30px,red,@dir) when (@dir = top) {
+    &::after{
+        transform: rotate(45deg);
+    };
+ }
+
+ .arrow2(30px,red,@dir) when (@dir = right) {
+    &::after{
+        transform: rotate(135deg);
+    };
+ }
+
+ .arrow2(30px,red,@dir) when (@dir = bottom) {
+    &::after{
+        transform: rotate(-45deg);
+    };
+ }
+
+ .arrow2(30px,red,@dir) when (@dir = left) {
+    &::after{
+        transform: rotate(-135deg);
+    };
+ }
+
+
+.box1{
+    .arrow2(30px,red,top);
+}
+.box2{
+    .arrow2(30px,red,right);
+}
+.box3{
+    .arrow2(30px,red,bottom);
+}
+.box4{
+    .arrow2(30px,red,left);
+}

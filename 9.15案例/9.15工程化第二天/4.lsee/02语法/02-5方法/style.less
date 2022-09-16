@@ -1,0 +1,85 @@
+//定义设置盒子宽高的方法
+.size(@w:100px,@h:100px,@bgc:pink) {
+    width: @w;
+    height: @h;
+    background-color: @bgc;
+}
+ 
+.box1{
+    .size(100px,100px,pink);
+}
+
+.box2 {
+    .size(100px,100px,blue);
+}
+
+
+//盒子剧中的方法
+.center (@w:100px,@mt:0,@mb:@mt){
+    width: @w;
+    margin: @mt auto @mb;
+}
+//让文字垂直居中的方法
+.hlh (@h){
+    height: @h;
+    line-height: @h;
+}
+.box3{
+    //如果使用的参数默认值 连同参数集合都可以省略
+    .size;
+    .center;
+    .hlh(100px);  //文字垂直居中的方法
+}
+
+//定义盒子阴影的方法
+.box-shadow(@x,@y,@r,@c){
+    box-shadow:@x @y @r @c;
+     //chrome
+     -webkit-box-shadow:@x @y @r @c;
+     //ff
+     -moz-box-shadow: @x @y @r @c;
+     //opear
+     -o-box-shadow: @x @y @r @c;
+     //ie
+     -ms-box-shadow:@x @y @r @c;
+}
+.box-shadow(@x,@y,@r,@c){
+    //获取所有参数:我们可以通过@arguments获取所有的参数  剩余参数的语法 arguments
+
+    box-shadow:@arguments;
+     //chrome
+     -webkit-box-shadow:@arguments;
+     //ff
+     -moz-box-shadow: @arguments;
+     //opear
+     -o-box-shadow: @arguments;
+     //ie
+     -ms-box-shadow:@arguments;
+}
+
+
+
+//设置盒子阴影
+.box4 {
+    .size;
+    .center;
+    box-shadow: 1px 2px 3px blue;   //不能有逗号分隔
+    //兼容所有的浏览器
+    //chrome
+    -webkit-box-shadow: 1px,2px,3px,blue;
+    //ff
+    -moz-box-shadow: 1px,2px,3px,blue;
+    //opear
+    -o-box-shadow: 1px,2px,3px,blue;
+    //ie
+    -ms-box-shadow: 1px,2px,3px,blue;
+}
+
+.box5{
+    .size;
+    .center!important;
+    .box-shadow(3px,4px,5px,orange);
+    margin-top: 20px;
+    width: 300px;
+}
+ 

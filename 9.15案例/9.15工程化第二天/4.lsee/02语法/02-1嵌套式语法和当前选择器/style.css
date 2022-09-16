@@ -1,0 +1,7 @@
+.box1 .box2 a {
+  color: red;
+  font-size: 20px;
+}
+.box1 .box2 a:hover {
+  color: aqua;
+}

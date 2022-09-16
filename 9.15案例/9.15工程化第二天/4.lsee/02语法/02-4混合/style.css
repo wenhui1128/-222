@@ -1,0 +1,22 @@
+.moudle .header {
+  color: red;
+}
+.moudle .body {
+  color: green;
+}
+.moudle .footer {
+  color: blue;
+}
+.moudle2 .moudle .footer {
+  color: aqua;
+}
+#test {
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+}
+#box {
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+}

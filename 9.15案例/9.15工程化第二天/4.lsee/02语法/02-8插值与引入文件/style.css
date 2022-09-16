@@ -1,0 +1,19 @@
+/* //定义变量
+@day:'周四';
+@num:2;
+@dir:top; */
+@import './demo.less';
+.box::after {
+  content: '今天是周四';
+}
+.box-2 {
+  color: red;
+}
+.box3 {
+  border-top: 1px solid #999;
+}
+/* //支持声明前置  但建议放在上边
+//定义变量
+@day:'周四';
+@num:2;
+@dir:top; */

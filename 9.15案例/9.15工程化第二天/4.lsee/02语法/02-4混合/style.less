@@ -1,0 +1,38 @@
+//所谓混合 就是一种特定的选择器
+//支持类混合
+.moudle {
+    .header{
+        color: red;
+    }
+    .body{
+        color: green;
+    }
+    .footer{
+        color:blue;
+    }
+}
+
+
+//使用混合 复用样式
+.moudle2{
+    .moudle{
+        .footer{
+            color: aqua;
+        }
+    }
+}   
+
+
+//支持id混合
+#test {
+    @size:100px;
+
+    width: @size;
+    height: @size;
+    background-color: pink;
+}
+
+//使用id混合场景复用
+#box {
+    #test;
+}

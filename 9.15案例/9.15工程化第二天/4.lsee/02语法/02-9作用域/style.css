@@ -1,0 +1,17 @@
+.test {
+  height: 100px;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  width: 200px;
+  margin: 0 auto 0;
+}
+.box #demo {
+  background-color: green;
+}
+.box2 {
+  background-color: green;
+  height: 100px;
+  line-height: 100px;
+}

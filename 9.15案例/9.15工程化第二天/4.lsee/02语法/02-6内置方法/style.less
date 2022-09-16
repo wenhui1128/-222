@@ -1,0 +1,34 @@
+//使用内置方法
+.box1 {
+    // width: ceil(4.1px);
+    // width: floor(4.9px);
+    // width: round(4.5px);
+    // width: round(4.1px);
+    // width: max(100px, 200px);
+    // width: min(100px, 200px);
+    // 百分比
+    // width: percentage(0.1);
+
+    // 定义色彩方法
+    // 定义局部变量
+    // @color: hsla(250, 50%, 50%, 50%);
+
+    // 色彩通道方法 red，green, blue, alpha, 
+    // color: red(@color);
+    // color: green(@color);
+    // color: blue(@color);
+    // color: alpha(@color);
+
+    // 色彩操作方法 fadeIn, fadeOut, fadeTo, saturate, desaturate, lighten, darken
+    // color: fadein(@color, 30%);
+    // color: saturate(@color, 40%);
+
+    
+    // 色彩混合方法 softLight，hardLight
+    @color: #f30;
+    @color2: #fe2;
+
+    // 混合颜色
+    color: softlight(@color, @color2);
+}
+ 
